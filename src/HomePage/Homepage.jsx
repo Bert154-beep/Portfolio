@@ -166,7 +166,7 @@ const Homepage = () => {
       {/* FOOTER/CONTACT SECITON */}
       <footer ref={ContactRef} className='bg-[#191919] lg:h-[50vh]'>
         <div>
-          <div className='flex items-center justify-center lg:w-[640px]'>
+          <div className='flex items-center justify-center'>
             <div className='mt-18 font-Poppins text-bold text-2xl text-white'>Contact</div>
           </div>
           <div className='flex items-center flex-col justify-center'>

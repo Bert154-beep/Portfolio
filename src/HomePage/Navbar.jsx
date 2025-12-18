@@ -30,7 +30,7 @@ const Navbar = ({scrollToContact, scrollToProject, scrollToExperience}) => {
             <ul id='nav-items' className='flex lg:gap-10 gap-2 lg:text-base text-xs font-Jakarta text-white'>
               <li><a href="/"><button className='cursor-pointer'>Home</button></a></li>
               <li><button onClick={scrollToProject} className='cursor-pointer'>Projects</button></li>
-              <li><button onClick={scrollToExperience} className='cursor-pointer'>Experience</button></li>
+              <li><button onClick={scrollToExperience} className='cursor-pointer'>Reviews</button></li>
               <li><button onClick={scrollToContact} className='cursor-pointer'>Contact</button></li>
             </ul>
           </div>

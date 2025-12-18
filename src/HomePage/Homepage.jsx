@@ -7,6 +7,10 @@ import JSIcon from '../assets/JSICON.png'
 import CSSIcon from '../assets/CSSICON.png'
 import Img1 from '../assets/Img1.png'
 import Img2 from '../assets/Img2.png'
+import T1 from '../assets/T1.png'
+import T2 from '../assets/T2.png'
+import T3 from '../assets/T3.png'
+import T4 from '../assets/T4.png'
 import ViewIcon from '../assets/View.png'
 import LogoIcon from '../assets/Logo Icon.png'
 import EmailIcon from '../assets/EmailIcon.png'
@@ -17,6 +21,8 @@ import { useRef } from 'react'
 import InstaIcon from '../assets/Instagram.png'
 import LinkedIcon from '../assets/linkedin.png'
 import FaceIcon from '../assets/facebook.png'
+import { StarIcon, UserCircle, UserIcon } from 'lucide-react'
+import { useState } from 'react'
 
 const Homepage = () => {
 
@@ -63,13 +69,49 @@ const Homepage = () => {
     })
   })
 
+  const reviews = [
+    {
+      name: "Sarah Mitchell – Product Manager",
+      rating: 5,
+      text: "Devsynx delivered exactly what we needed. The website is fast, clean, and scalable. Communication was clear throughout the project, and the final result exceeded our expectations."
+    },
+    {
+      name: "James Carter – Founder, StartupHive",
+      rating: 5,
+      text: "The Devsynx team turned our idea into a fully functional web application. Their technical expertise and attention to detail were impressive."
+    },
+    {
+      name: "Ahmed Khan – CEO, Nexa Solutions",
+      rating: 5,
+      text: "Working with Devsynx was smooth and professional. They understood our business goals and delivered perfectly."
+    },
+    {
+      name: "Emily Rodriguez – Marketing Lead",
+      rating: 5,
+      text: "Devsynx redesigned our platform with a strong focus on UX. Engagement increased immediately after launch."
+    }
+  ];
+
+
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
+  const review = reviews[current];
+
 
   return (
     <div>
       {/* NAVBAR */}
       <div><Navbar scrollToContact={scrollToContact} scrollToExperience={scrollToExperience} scrollToProject={scrollToProject} /></div>
 
-      
+
       {/* MAIN BODY */}
       <div className='bg-[#161513] w-full h-full'>
 
@@ -79,14 +121,14 @@ const Homepage = () => {
         {/* HERO SECTION */}
         <div>
           <div id='i1' className='flex items-center justify-center'><img className='lg:h-[180px] h-[150px] mt-10' src={Avatar} alt="" /></div>
-          <div id='p1' className='flex flex-col items-center justify-center mt-5 font-Poppins font-extrabold text-white lg:text-4xl text-3xl'>
-            <span>I do code and</span>
-            <span>make content <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] from-0% to-100% to-[#9A33FF]'>about it</span>!</span>
+          <div id='p1' className='flex flex-col text-center items-center justify-center mt-5 font-Poppins font-extrabold text-white lg:text-4xl text-3xl'>
+            <span>We create applications</span>
+            <span>and innovative solutions <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] from-0% to-100% to-[#9A33FF]'>Join Us</span>!</span>
           </div>
         </div>
         <div className='flex items-center justify-center'>
           <div>
-            <div className='break-words lg:flex lg:flex-col justify-center items-center text-[#C5C5C5] lg:w-[1000px] md:w-[500px] w-[300px] lg:text-base  text-[12px] mt-5'>Hi, I’m Masab Ahmed, a Full Stack Developer specializing in building efficient web applications with JavaScript, React, and Node.js. <span> I’m passionate about creating seamless user experiences and solving complex problems.</span></div>
+            <div className='break-words lg:flex lg:flex-col justify-center text-center items-center text-[#C5C5C5] lg:w-[1000px] md:w-[500px] w-[300px] lg:text-base  text-[12px] mt-5'> Hi, we’re Devsynx, a web development agency specializing in building scalable web and mobile applications, along with innovative Web3 solutions.  We’re passionate about crafting seamless digital experiences, leveraging modern technologies, and solving complex business challenges.</div>
           </div>
         </div>
         <div className='flex items-center justify-center lg:mt-10  mt-10'>
@@ -110,10 +152,10 @@ const Homepage = () => {
           <div ref={ProjectRef} className='font-Poppins font-extrabold text-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660]  to-[#D5491D] text-4xl'>PROJECTS</div>
         </div>
         <div className='flex items-center justify-center'>
-          <ul className='lg:flex flex flex-col lg:flex-row justify-around items-center lg:p-0 px-5 mt-10 gap-10'>
+          <ul className='grid grid-cols-2 justify-around items-center lg:p-0 px-5 mt-10 gap-10'>
             <li>
               <a href="https://www.linkedin.com/feed/update/urn:li:activity:7296279845456474113/"><div>
-                <img className='h-44 w-[380px]' src={Img2} alt="" />
+                <img className='h-44 w-[380px]' src={T1} alt="" />
                 <div className='bg-[#2A2A2A] h-[55px] flex items-center'>
                   <div className='flex flex-col text-white p-2'>
                     <span className='font-Poppins font-extrabold'>QUICKKEY</span>
@@ -124,10 +166,32 @@ const Homepage = () => {
             </li>
             <li>
               <a href="https://www.linkedin.com/posts/masab-ahmed-411a8729b_reactjs-tailwindcss-employeemanagement-activity-7276552382212153344-XZjr/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEiYoY0B7XhzgDTQKa2eJS0EEOARKzcZS24"><div>
-                <img className='h-44 w-[380px]' src={Img1} alt="" />
+                <img className='h-44 w-[380px]' src={T2} alt="" />
                 <div className='bg-[#2A2A2A] h-[55px] flex items-center'>
                   <div className='flex flex-col text-white p-2'>
-                    <span className='font-Poppins font-extrabold'>STAFF SYNC</span>
+                    <span className='font-Poppins font-extrabold'>Sky Vault</span>
+                    <span className='text-sm font-semibold font-Poppins'>Click To View</span>
+                  </div>
+                </div>
+              </div></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/posts/masab-ahmed-411a8729b_reactjs-tailwindcss-employeemanagement-activity-7276552382212153344-XZjr/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEiYoY0B7XhzgDTQKa2eJS0EEOARKzcZS24"><div>
+                <img className='h-44 w-[380px]' src={T3} alt="" />
+                <div className='bg-[#2A2A2A] h-[55px] flex items-center'>
+                  <div className='flex flex-col text-white p-2'>
+                    <span className='font-Poppins font-extrabold'>CineVerse</span>
+                    <span className='text-sm font-semibold font-Poppins'>Click To View</span>
+                  </div>
+                </div>
+              </div></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/posts/masab-ahmed-411a8729b_reactjs-tailwindcss-employeemanagement-activity-7276552382212153344-XZjr/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEiYoY0B7XhzgDTQKa2eJS0EEOARKzcZS24"><div>
+                <img className='h-44 w-[380px]' src={T4} alt="" />
+                <div className='bg-[#2A2A2A] h-[55px] flex items-center'>
+                  <div className='flex flex-col text-white p-2'>
+                    <span className='font-Poppins font-extrabold'>ASICNOVA</span>
                     <span className='text-sm font-semibold font-Poppins'>Click To View</span>
                   </div>
                 </div>
@@ -140,20 +204,61 @@ const Homepage = () => {
 
         {/* EXPERIENCE SECTIONS */}
         <div>
-          <div ref={ExperienceRef} className='font-Poppins font-extrabold flex items-center justify-center mt-16 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#5BADFF]  to-[#1373D1]'>EXPERIENCE</div>
+          <div ref={ExperienceRef} className='font-Poppins font-extrabold flex items-center justify-center mt-16 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#5BADFF]  to-[#1373D1]'>REVIEWS</div>
         </div>
-        <div className='flex items-center flex-col justify-center mt-10'>
-          <div className='flex justify-between items-center lg:p-0 px-5 md:w-[500px]  lg:w-[700px]'>
-            <div className='flex items-center gap-5'>
-              <img className='h-8' src={LogoIcon} alt="" />
-              <span className='lg:text-lg text-sm font-Poppins  font-bold text-white'>Full Stack Developer at DevSynx</span>
-            </div>
-            <div className='text-[#8491A0] text-sm'>Jan 2025 - Present</div>
+          <li className="grid grid-cols-1 relative">
+      <div className="flex items-center flex-col justify-center mt-10 transition-all duration-500">
+        
+        {/* Header */}
+        <div className="flex justify-between items-center lg:p-0 px-5 md:w-[500px] lg:w-[700px]">
+          <div className="flex items-center gap-5">
+            <UserCircle className="bg-white rounded-2xl w-10 h-10" />
+            <span className="lg:text-lg text-sm font-Poppins font-bold text-white">
+              {review.name}
+            </span>
           </div>
-          <div className='flex items-center justify-center lg:w-full'>
-            <p className='flex items-center justify-center lg:w-[700px] md:w-[500px] w-[300px] ml-5  lg:mb-32 mb-32 mt-3 text-[#8491A0] lg:text-sm text-xs'>I am currently working as a Full Stack Developer at DevSynx, where I design and build scalable web applications using technologies like HTML, CSS, JavaScript, Node.js, MongoDB, and MySQL. I collaborate with teams to deliver high-quality, responsive solutions, continuously refining my skills in both front-end and back-end development.</p>
+          <div className="text-[#8491A0] text-sm flex items-center gap-2">
+            {review.rating}
+            <StarIcon className="w-4 h-4 text-yellow-200" />
           </div>
         </div>
+
+        {/* Review Text */}
+        <div className="flex items-center justify-center lg:w-full">
+          <p className="lg:w-[700px] md:w-[500px] w-[300px] ml-5 mt-3 mb-24 text-[#8491A0] lg:text-sm text-xs text-center">
+            “{review.text}”
+          </p>
+        </div>
+
+        {/* Controls */}
+        <div className="flex gap-5 mb-10">
+          <button
+            onClick={prevSlide}
+            className="px-4 py-2 border border-[#8491A0] text-[#8491A0] rounded-lg hover:text-white hover:border-white transition"
+          >
+            Prev
+          </button>
+          <button
+            onClick={nextSlide}
+            className="px-4 py-2 border border-[#8491A0] text-[#8491A0] rounded-lg hover:text-white hover:border-white transition"
+          >
+            Next
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className="flex mb-5 gap-2">
+          {reviews.map((_, index) => (
+            <span
+              key={index}
+              className={`w-2 h-2 rounded-full ${
+                current === index ? "bg-white" : "bg-[#8491A0]"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </li>
       </div>
 
 
@@ -171,8 +276,7 @@ const Homepage = () => {
           </div>
           <div className='flex items-center flex-col justify-center'>
             <div className='lg:w-[875px] mt-2'>
-              <div className='text-[#C5C5C5] text-sm lg:p-0 px-5'>Hi, I’m Masab Ahmed, a Full Stack Developer specializing in building efficient web applications with JavaScript, React, and Node.js.
-                I’m passionate about creating seamless user experiences and solving complex problems.</div>
+              <div className='text-[#C5C5C5] text-sm lg:p-0 px-5'>Hi, we’re Devsynx, a web development agency specializing in building scalable web and mobile applications, along with innovative Web3 solutions.  We’re passionate about crafting seamless digital experiences, leveraging modern technologies, and solving complex business challenges</div>
               <div>
                 <div className='mt-10'>
                   <div className='flex lg:p-0 px-5 lg:mb-0 mb-32   items-center gap-3'>

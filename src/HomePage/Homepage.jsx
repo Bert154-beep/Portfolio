@@ -7,10 +7,6 @@ import JSIcon from '../assets/JSICON.png'
 import CSSIcon from '../assets/CSSICON.png'
 import Img1 from '../assets/Img1.png'
 import Img2 from '../assets/Img2.png'
-import T1 from '../assets/T1.png'
-import T2 from '../assets/T2.png'
-import T3 from '../assets/T3.png'
-import T4 from '../assets/T4.png'
 import ViewIcon from '../assets/View.png'
 import LogoIcon from '../assets/Logo Icon.png'
 import EmailIcon from '../assets/EmailIcon.png'
@@ -21,8 +17,13 @@ import { useRef } from 'react'
 import InstaIcon from '../assets/Instagram.png'
 import LinkedIcon from '../assets/linkedin.png'
 import FaceIcon from '../assets/facebook.png'
-import { StarIcon, UserCircle, UserIcon } from 'lucide-react'
+import T1 from '../assets/T1.png'
+import T2 from '../assets/T2.png'
+import T3 from '../assets/T3.png'
+import T4 from '../assets/T4.png'
 import { useState } from 'react'
+import { StarIcon, UserCircle, UserIcon } from 'lucide-react'
+
 
 const Homepage = () => {
 
@@ -69,26 +70,26 @@ const Homepage = () => {
     })
   })
 
-  const reviews = [
+    const reviews = [
     {
       name: "Sarah Mitchell – Product Manager",
       rating: 5,
-      text: "Devsynx delivered exactly what we needed. The website is fast, clean, and scalable. Communication was clear throughout the project, and the final result exceeded our expectations."
+      text: "Masab delivered exactly what we needed. The website is fast, clean, and scalable. Communication was clear throughout the project, and the final result exceeded our expectations."
     },
     {
       name: "James Carter – Founder, StartupHive",
       rating: 5,
-      text: "The Devsynx team turned our idea into a fully functional web application. Their technical expertise and attention to detail were impressive."
+      text: "Masab turned our idea into a fully functional web application. Their technical expertise and attention to detail were impressive."
     },
     {
       name: "Ahmed Khan – CEO, Nexa Solutions",
       rating: 5,
-      text: "Working with Devsynx was smooth and professional. They understood our business goals and delivered perfectly."
+      text: "Working with Masab was smooth and professional. They understood our business goals and delivered perfectly."
     },
     {
       name: "Emily Rodriguez – Marketing Lead",
       rating: 5,
-      text: "Devsynx redesigned our platform with a strong focus on UX. Engagement increased immediately after launch."
+      text: "Masab redesigned our platform with a strong focus on UX. Engagement increased immediately after launch."
     }
   ];
 
@@ -111,7 +112,7 @@ const Homepage = () => {
       {/* NAVBAR */}
       <div><Navbar scrollToContact={scrollToContact} scrollToExperience={scrollToExperience} scrollToProject={scrollToProject} /></div>
 
-
+      
       {/* MAIN BODY */}
       <div className='bg-[#161513] w-full h-full'>
 
@@ -121,14 +122,14 @@ const Homepage = () => {
         {/* HERO SECTION */}
         <div>
           <div id='i1' className='flex items-center justify-center'><img className='lg:h-[180px] h-[150px] mt-10' src={Avatar} alt="" /></div>
-          <div id='p1' className='flex flex-col text-center items-center justify-center mt-5 font-Poppins font-extrabold text-white lg:text-4xl text-3xl'>
-            <span>We create applications</span>
-            <span>and innovative solutions <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] from-0% to-100% to-[#9A33FF]'>Join Us</span>!</span>
+          <div id='p1' className='flex flex-col items-center justify-center mt-5 font-Poppins font-extrabold text-white lg:text-4xl text-3xl'>
+            <span>I do code and</span>
+            <span>make content <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660] from-0% to-100% to-[#9A33FF]'>about it</span>!</span>
           </div>
         </div>
         <div className='flex items-center justify-center'>
           <div>
-            <div className='break-words lg:flex lg:flex-col justify-center text-center items-center text-[#C5C5C5] lg:w-[1000px] md:w-[500px] w-[300px] lg:text-base  text-[12px] mt-5'> Hi, we’re Devsynx, a web development agency specializing in building scalable web and mobile applications, along with innovative Web3 solutions.  We’re passionate about crafting seamless digital experiences, leveraging modern technologies, and solving complex business challenges.</div>
+            <div className='break-words lg:flex lg:flex-col justify-center items-center text-[#C5C5C5] lg:w-[1000px] md:w-[500px] w-[300px] lg:text-base  text-[12px] mt-5'>Hi, I’m Masab Ahmed, a Full Stack Developer specializing in building efficient web applications with JavaScript, React, and Node.js. <span> I’m passionate about creating seamless user experiences and solving complex problems.</span></div>
           </div>
         </div>
         <div className='flex items-center justify-center lg:mt-10  mt-10'>
@@ -147,7 +148,7 @@ const Homepage = () => {
         </div>
 
 
-        {/* PROJECT SECTION */}
+     {/* PROJECT SECTION */}
         <div className='flex items-center justify-center mt-16'>
           <div ref={ProjectRef} className='font-Poppins font-extrabold text-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FF8660]  to-[#D5491D] text-4xl'>PROJECTS</div>
         </div>
@@ -276,7 +277,7 @@ const Homepage = () => {
           </div>
           <div className='flex items-center flex-col justify-center'>
             <div className='lg:w-[875px] mt-2'>
-              <div className='text-[#C5C5C5] text-sm lg:p-0 px-5'>Hi, we’re Devsynx, a web development agency specializing in building scalable web and mobile applications, along with innovative Web3 solutions.  We’re passionate about crafting seamless digital experiences, leveraging modern technologies, and solving complex business challenges</div>
+              <div className='text-[#C5C5C5] text-sm lg:p-0 px-5'>Hi, I’m Masab Ahmed, a Full Stack Developer specializing in building efficient web applications with JavaScript, React, and Node.js. I’m passionate about creating seamless user experiences and solving complex problems.</div>
               <div>
                 <div className='mt-10'>
                   <div className='flex lg:p-0 px-5 lg:mb-0 mb-32   items-center gap-3'>

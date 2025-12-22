@@ -25,7 +25,7 @@ const Navbar = ({scrollToContact, scrollToProject, scrollToExperience}) => {
   return (
     <div className='bg-[#222222] w-[100vw] h-[8.218vh]'>
         <div className='flex justify-around items-center h-full'>
-          <div id='name' className='text-white font-Urbanist font-bold'>DevSynx</div>
+          <div id='name' className='text-white font-Urbanist font-bold'>Masab</div>
           <div>
             <ul id='nav-items' className='flex lg:gap-10 gap-2 lg:text-base text-xs font-Jakarta text-white'>
               <li><a href="/"><button className='cursor-pointer'>Home</button></a></li>
